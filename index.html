@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> </title>
+
+<style>
+/* ... Tumhara existing CSS yahi rahega ... */
+
+/* GLOBAL NEON COLORS + EFFECTS */
+body {
+    margin: 0;
+    padding: 0;
+    background: #060612;
+    font-family: 'Courier New', monospace;
+    color: white;
+    text-align: center;
+}
+
+/* UNIVERSAL NEON CARD */
+.neon-card {
+    border: 2px solid #00eaff;
+    background: rgba(0,0,0,0.25);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow:
+        0 0 10px #00eaff,
+        0 0 25px #00eaff,
+        inset 0 0 15px #00eaff55;
+}
+
+/* BLUE NEON BORDER */
+.neon-border {
+    border: 2px solid #00eaff;
+    border-radius: 12px;
+    box-shadow:
+        0 0 10px #00eaff,
+        0 0 20px #00eaff;
+}
+
+/* TEXT GLOW */
+.neon-text {
+    color: #fff;
+    text-shadow:
+        0 0 10px #ff00ff,
+        0 0 18px #ff00ff,
+        0 0 25px #00eaff;
+}
+
+/* LOGO CIRCLE GLOW */
+.logo-glow {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 3px solid #00eaff;
+    box-shadow:
+        0 0 25px #00eaff,
+        0 0 50px #00eaff;
+    animation: pulse 2s infinite alternate;
+}
+
+/* PULSE EFFECT */
+@keyframes pulse {
+    from { box-shadow: 0 0 25px #00eaff; }
+    to   { box-shadow: 0 0 50px #00eaff; }
+}
+
+/* GREEN ONLINE DOT */
+.online-dot {
+    width: 15px;
+    height: 15px;
+    background: #0f0;
+    border-radius: 50%;
+    box-shadow:
+        0 0 10px #0f0,
+        0 0 20px #0f0;
+}
+
+/* NEON GRADIENT BUTTON */
+.neon-btn {
+    background: linear-gradient(90deg, #00eaff, #ff00ff);
+    color: white;
+    padding: 12px 28px;
+    margin-top: 10px;
+    border-radius: 10px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    box-shadow:
+        0 0 15px #ff00ff,
+        0 0 25px #00eaff;
+}
+.neon-btn:hover {
+    transform: scale(1.05);
+}
+
+/* PAGE LAYOUT */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 10px;
+}
+
+.logo img { width: 180px; height: 180px; border-radius: 50%; }
+
+h1 {
+    color: #ff00ff;
+    font-size: 28px;
+    margin-top: 20px;
+    text-shadow: 0 0 15px #ff00ff;
+}
+
+h2 {
+    color: #00eaff;
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.generate-box {
+    border: 2px solid #00eaff;
+    padding: 10px;
+    margin: 15px auto;
+    width: 80%;
+    max-width: 320px;
+    border-radius: 10px;
+    color: #b0eaff;
+    box-shadow: 0 0 15px #00eaff55;
+}
+
+.btn {
+    background: transparent;
+    border: 2px solid #00eaff;
+    padding: 12px 28px;
+    margin-top: 10px;
+    border-radius: 10px;
+    font-size: 18px;
+    color: #00eaff;
+    transition: 0.3s;
+}
+.btn:hover {
+    background: #00eaff;
+    color: #000;
+    box-shadow: 0 0 15px #00eaff;
+}
+
+.telegram-box {
+    margin-top: 30px;
+    border: 2px solid #ff00ff55;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 340px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 20px #ff00ff55;
+}
+
+.telegram-box p {
+    color: #ff00ff;
+    font-size: 15px;
+}
+
+.telegram-btn {
+    background: linear-gradient(90deg, #00eaff, #ff00ff);
+    padding: 10px 25px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    color: black;
+    box-shadow: 0 0 20px #ff00ff;
+}
+.telegram-btn:hover {
+    transform: scale(1.05);
+}
+
+.key-box {
+    margin-top: 20px;
+    color: #00eaff;
+    font-size: 17px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- LOGO -->
+  <img class="logo-glow" src="https://i.supaimg.com/8ffc8f83-c896-4cb6-9f8e-b0af9b192fd9.jpg" alt="Logo">
+
+  <h1 class="neon-text">bakkar bhaiya key generator website</h1>
+  <h2 class="neon-text">WALCOME TO GENERATE KEY</h2>
+
+  <div class="generate-box neon-border">– Press Generate –</div>
+
+  <button class="neon-btn" onclick="generateKey()">GENERATE KEY</button>
+  <button class="neon-btn" onclick="copyKey()">COPY KEY</button>
+
+  <div class="key-box" id="keyBox"></div>
+  <div class="telegram-box neon-card">
+    <p>❤️ Any Problem? Join Telegram!</p>
+    <button class="telegram-btn"
+      onclick="window.open('https://t.me/+w_rE9yRqIA41MzFl', '_blank')">
+      Join Now
+    </button>
+  </div>
+
+</div>
+
+<script>
+function generateKey() {
+  window.open("https://earnlinks.in/q5sla", "_blank");
+  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+  let key = "";
+  for (let i = 0; i < 16; i++) {
+    key += chars.charAt(Math.floor(Math.random() * chars.length));
+    if ((i + 1) % 4 === 0 && i < 15) key += "-";
+  }
+  document.getElementById("keyBox").innerHTML =
+    "🔑 Your Key: <b>" + key + "</b>";
+}
+
+function copyKey() {
+  const keyText = document.getElementById("keyBox").innerText.replace("🔑 Your Key: ", "");
+  if (keyText.trim() !== "") {
+    navigator.clipboard.writeText(keyText);
+    alert("✅ Key copied!");
+  } else {
+    alert("⚠️ First generate a key!");
+  }
+}
+</script>
+
+</body>
+</html>
