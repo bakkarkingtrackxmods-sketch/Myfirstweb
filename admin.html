@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: #000;
+        font-family: 'Poppins', sans-serif;
+        color: white;
+    }
+
+    /* TOP BAR */
+    .topbar {
+        width: 100%;
+        background: #020202;
+        padding: 15px 0;
+        text-align: center;
+        font-size: 22px;
+        font-weight: bold;
+        color: #00ff66;
+        border-bottom: 2px solid #00ff66;
+        box-shadow: 0 0 10px #00ff66;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+    }
+
+    .content {
+        margin-top: 90px;
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 26px;
+        color: #fff;
+        margin-bottom: 20px;
+    }
+
+    .card {
+        background: #020202;
+        border: 1px solid #00ff66;
+        border-radius: 12px;
+        padding: 25px;
+        margin-bottom: 20px;
+        box-shadow: 0 0 15px #00ff66;
+    }
+
+    .card .value {
+        font-size: 32px;
+        font-weight: bold;
+        color: #00ff66;
+    }
+
+    .label {
+        margin-top: 5px;
+        color: #ccc;
+        font-size: 14px;
+    }
+
+    /* Add Credits Button */
+    .btn {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 6px;
+        background: #00ff66;
+        color: #000;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    .btn:hover {
+        background: #00cc55;
+    }
+
+    /* Popup Box */
+    #creditBox {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #000;
+        padding: 30px;
+        border: 1px solid #00ff66;
+        box-shadow: 0 0 20px #00ff66;
+        width: 260px;
+        text-align: center;
+        border-radius: 10px;
+    }
+
+    #creditBox input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #00ff66;
+        background: transparent;
+        color: #00ff66;
+        border-radius: 6px;
+        font-size: 16px;
+    }
+
+</style>
+</head>
+<body>
+
+<!-- TOP TITLE BAR -->
+<div class="topbar">RAHUL MODS</div>
+
+<div class="content">
+
+    <h2>Dashboard Overview</h2>
+
+    <!-- TOTAL KEYS -->
+    <div class="card">
+        <div class="value">0</div>
+        <div class="label">Total Keys</div>
+    </div>
+
+    <!-- ACTIVE KEYS -->
+    <div class="card">
+        <div class="value">0</div>
+        <div class="label">Active Keys</div>
+    </div>
+
+    <!-- TOTAL RESELLERS -->
+    <div class="card">
+        <div class="value">0</div>
+        <div class="label">Total Resellers</div>
+    </div>
+
+    <!-- CREDITS -->
+    <div class="card">
+        <div class="value" id="credits">5000</div>
+        <div class="label">Your Credits</div>
+
+        <button class="btn" onclick="openCreditBox()">Add Credits</button>
+    </div>
+
+</div>
+
+<!-- Popup Box -->
+<div id="creditBox">
+    <h3 style="color:#00ff66;">Add Credits</h3>
+    <input type="number" id="addAmount" placeholder="Enter amount">
+    <button class="btn" onclick="addCredits()">Add</button>
+    <button class="btn" style="background:#ff4444;color:#fff;margin-top:5px;" onclick="closeCreditBox()">Cancel</button>
+</div>
+
+<script>
+function openCreditBox() {
+    document.getElementById("creditBox").style.display = "block";
+}
+
+function closeCreditBox() {
+    document.getElementById("creditBox").style.display = "none";
+}
+
+function addCredits() {
+    let amount = parseInt(document.getElementById("addAmount").value);
+    let current = parseInt(document.getElementById("credits").innerText);
+
+    if (!amount || amount <= 0) {
+        alert("Please enter a valid amount");
+        return;
+    }
+
+    document.getElementById("credits").innerText = current + amount;
+    closeCreditBox();
+}
+</script>
+
+</body>
+</html>

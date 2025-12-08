@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: #000;
+        color: white;
+        font-family: Poppins, sans-serif;
+    }
+
+    /* TOP BAR */
+    .topbar {
+        width: 100%;
+        padding: 15px;
+        background: #020202;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: #00ff66;
+        border-bottom: 2px solid #00ff66;
+        box-shadow: 0 0 10px #00ff66;
+    }
+
+    .menu-btn {
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+    /* SIDEBAR */
+    #sidebar {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        left: 0;
+        top: 0;
+        background: #030d03;
+        overflow-x: hidden;
+        transition: 0.4s;
+        padding-top: 80px;
+        box-shadow: 2px 0 15px #00ff66;
+        border-right: 2px solid #00ff66;
+    }
+
+    .side-link {
+        padding: 15px 20px;
+        display: block;
+        color: #00ff66;
+        font-size: 18px;
+        text-decoration: none;
+        margin-bottom: 10px;
+    }
+
+    .side-link:hover {
+        background: #00ff66;
+        color: black;
+        border-radius: 8px;
+    }
+
+    .logout {
+        color: #ff4444 !important;
+        margin-top: 40px;
+    }
+
+    /* Page Content */
+    .content {
+        padding: 20px;
+    }
+
+    .card {
+        background: #020202;
+        border: 1px solid #00ff66;
+        border-radius: 12px;
+        padding: 25px;
+        margin-bottom: 20px;
+        box-shadow: 0 0 12px #00ff66;
+    }
+
+    .value {
+        font-size: 32px;
+        color: #00ff66;
+        font-weight: bold;
+    }
+
+</style>
+</head>
+<body>
+
+<!-- Sidebar -->
+<div id="sidebar">
+    <a href="dashboard.html" class="side-link">📊 Dashboard</a>
+    <a href="#" class="side-link">➕ Create Key</a>
+    <a href="#" class="side-link">🔑 Manage Keys</a>
+    <a href="profile.html" class="side-link">👤 Profile</a>
+    <a href="#" class="side-link logout">↩ Logout</a>
+</div>
+
+<!-- TOP BAR -->
+<div class="topbar">
+    <span class="menu-btn" onclick="openMenu()">☰</span>
+    <span style="font-size:22px;font-weight:bold;">RAHUL MODS</span>
+    <span style="font-size:22px;">🔄</span>
+</div>
+
+<div class="content">
+
+    <h2 style="color:#fff;">Dashboard Overview</h2>
+
+    <div class="card">
+        <div class="value">0</div>
+        <div>Total Keys</div>
+    </div>
+
+    <div class="card">
+        <div class="value">0</div>
+        <div>Active Keys</div>
+    </div>
+
+    <div class="card">
+        <div class="value">0</div>
+        <div>Total Resellers</div>
+    </div>
+
+    <div class="card">
+        <div class="value" id="credits">5000</div>
+        <div>Your Credits</div>
+    </div>
+
+</div>
+
+<script src="menu.js"></script>
+
+</body>
+</html>

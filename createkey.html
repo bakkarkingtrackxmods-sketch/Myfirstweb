@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Key</title>
+
+<style>
+body{
+    margin:0;
+    background:#000;
+    color:#0f0;
+    font-family:Arial;
+}
+.topbar{
+    background:#020402;
+    padding:15px;
+    text-align:center;
+    font-size:22px;
+    border-bottom:2px solid #0f0;
+}
+.container{
+    width:90%;
+    margin:20px auto;
+    background:#020402;
+    padding:20px;
+    border-radius:10px;
+    border:2px solid #0f0;
+    box-shadow:0 0 10px #0f0;
+}
+label{
+    font-size:18px;
+}
+input, select{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    background:#000;
+    border:1px solid #0f0;
+    border-radius:8px;
+    color:#0f0;
+}
+.btn{
+    width:100%;
+    background:#0f0;
+    color:#000;
+    padding:14px;
+    font-size:20px;
+    border-radius:10px;
+    text-align:center;
+    margin-top:10px;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">Generate Client Key</div>
+
+<div class="container">
+    <label>Game</label>
+    <select>
+        <option>Free Fire</option>
+        <option>BGMI</option>
+        <option>Pubg Global</option>
+    </select>
+
+    <label>Buyer Name</label>
+    <input type="text" placeholder="Buyer Name">
+
+    <label>Device Limit</label>
+    <input type="number" placeholder="e.g. 1">
+
+    <label>Number of Keys</label>
+    <input type="number" value="1">
+
+    <div class="btn">Generate Key(s)</div>
+</div>
+
+</body>
+</html>

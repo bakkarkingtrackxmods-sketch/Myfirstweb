@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Profile</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: #000;
+        color: #00ff66;
+        font-family: Poppins, sans-serif;
+    }
+
+    .topbar {
+        width: 100%;
+        padding: 15px;
+        background: #020202;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 2px solid #00ff66;
+        box-shadow: 0 0 10px #00ff66;
+    }
+
+    .menu-btn {
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+    #sidebar {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        left: 0;
+        top: 0;
+        background: #030d03;
+        overflow-x: hidden;
+        transition: 0.4s;
+        padding-top: 80px;
+        box-shadow: 2px 0 15px #00ff66;
+        border-right: 2px solid #00ff66;
+    }
+
+    .side-link {
+        padding: 15px 20px;
+        display: block;
+        color: #00ff66;
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+    .side-link:hover {
+        background: #00ff66;
+        color: black;
+        border-radius: 8px;
+    }
+
+    .box {
+        background:#020202;
+        border:1px solid #00ff66;
+        padding:20px;
+        border-radius:10px;
+        margin:20px;
+        box-shadow:0 0 15px #00ff66;
+    }
+
+</style>
+</head>
+<body>
+
+<div id="sidebar">
+    <a href="dashboard.html" class="side-link">📊 Dashboard</a>
+    <a href="#" class="side-link">➕ Create Key</a>
+    <a href="#" class="side-link">🔑 Manage Keys</a>
+    <a href="profile.html" class="side-link">👤 Profile</a>
+    <a href="#" class="side-link logout" style="color:#ff4444;">↩ Logout</a>
+</div>
+
+<div class="topbar">
+    <span class="menu-btn" onclick="openMenu()">☰</span>
+    <span style="font-size:22px;font-weight:bold;">Profile</span>
+    <span>⚙</span>
+</div>
+
+<div class="box">
+    <h2>👤 Admin Profile</h2>
+    <p style="font-size:20px;">Logged in as:</p>
+
+    <p id="username" style="font-size:25px;color:#00ff66;font-weight:bold;">
+        Loading...
+    </p>
+</div>
+
+<script src="menu.js"></script>
+
+<script>
+document.getElementById("username").innerText =
+    localStorage.getItem("adminUser") || "Unknown User";
+</script>
+
+</body>
+</html>

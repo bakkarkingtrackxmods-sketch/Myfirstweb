@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register Admin</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: #000;
+        font-family: 'Poppins', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: #fff;
+    }
+
+    .register-box {
+        width: 330px;
+        padding: 35px 25px;
+        border: 1px solid #00ff66;
+        box-shadow: 0 0 20px #00ff66;
+        border-radius: 10px;
+        background: #020202;
+        text-align: center;
+    }
+
+    h2 {
+        color: #00ff66;
+        font-size: 28px;
+        margin-bottom: 25px;
+    }
+
+    label {
+        display: block;
+        text-align: left;
+        margin-bottom: 6px;
+        font-size: 14px;
+        color: #ccc;
+    }
+
+    input {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 20px;
+        background: transparent;
+        border: 1px solid #00ff66;
+        border-radius: 5px;
+        font-size: 16px;
+        color: #00ff66;
+        outline: none;
+        box-shadow: 0 0 15px rgba(0,255,0,0.4);
+    }
+
+    input::placeholder {
+        color: #00ff66;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        background: #00ff66;
+        border: none;
+        border-radius: 6px;
+        color: #000;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: #00cc55;
+    }
+
+    p {
+        margin-top: 15px;
+        color: #ccc;
+    }
+
+    a {
+        color: #00ff66;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+</head>
+<body>
+
+<div class="register-box">
+    <h2>Register Admin</h2>
+
+    <form onsubmit="return registerUser(event)">
+        <label>New Username</label>
+        <input type="text" placeholder="New username" required>
+
+        <label>New Password</label>
+        <input type="password" placeholder="New password" required>
+
+        <label>Referral Code</label>
+        <input type="text" placeholder="Enter referral code">
+
+        <button type="submit">Register</button>
+    </form>
+
+    <p>Already have an account? <a href="index.html">Login here</a></p>
+</div>
+
+<script>
+function registerUser(e) {
+    e.preventDefault();
+    window.location.href = "admin.html"; // After register, open admin website
+}
+</script>
+
+</body>
+</html>
